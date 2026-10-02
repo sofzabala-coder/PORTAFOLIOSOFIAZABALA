@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofia Zabala — Creative Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<header class="site-header">
+  <a href="#hero" class="logo">Sofia Zabala</a>
+  <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-overlay">Menú</button>
+</header>
+
+<nav id="nav-overlay" class="nav-overlay">
+  <button id="menu-close" class="menu-toggle">Cerrar</button>
+  <ul class="nav-links">
+    <li><a href="#quien-soy">Quién soy</a></li>
+    <li><a href="#universo">Mi universo</a></li>
+    <li><a href="#que-hago">Qué hago</a></li>
+    <li><a href="#herramientas">Herramientas</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="hero" class="section hero">
+    <div class="hero-content">
+      <p class="hero-decor" data-split>universo</p>
+      <h1 class="signature hero-title" data-split>Sofia Zabala</h1>
+      <p class="tagline">Creative Mind · Digital Soul · Limitless Vision</p>
+      <p class="subtagline">Branding · Digital · Art</p>
+    </div>
+    <div class="hero-planet" aria-hidden="true"></div>
+  </section>
+
+  <section id="quien-soy" class="section reveal">
+    <h2>¿Quién es Sofi?</h2>
+    <div class="quien-soy-grid">
+      <div class="photo-frame" aria-hidden="true"><!-- pendiente: foto real --></div>
+      <p>
+        Diseñadora creativa basada en Bogotá, Colombia. Combino branding, diseño digital
+        y arte para construir identidades auténticas, memorables y vivas — pensadas para
+        marcas y clientes que quieren destacar con una visión propia.
+      </p>
+    </div>
+  </section>
+
+  <section id="universo" class="section reveal">
+    <h2>Mi universo</h2>
+    <p class="filosofia">
+      Creo marcas como se crean universos: con una identidad propia, coherente y viva en
+      cada punto de contacto.
+    </p>
+    <ul class="palabras-clave">
+      <li>Auténtico</li>
+      <li>Memorable</li>
+      <li>Vivo</li>
+    </ul>
+  </section>
+
+  <section id="que-hago" class="section reveal">
+    <h2>Qué hago</h2>
+    <div class="areas-grid">
+      <article class="area-card">
+        <h3>Branding</h3>
+        <p>Identidades visuales con personalidad propia.</p>
+      </article>
+      <article class="area-card">
+        <h3>Social</h3>
+        <p>Contenido y presencia de marca para redes.</p>
+      </article>
+      <article class="area-card">
+        <h3>Digital</h3>
+        <p>Diseño de interfaces y experiencias web.</p>
+      </article>
+      <article class="area-card">
+        <h3>Arte</h3>
+        <p>Piezas visuales exploratorias y personales.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="herramientas" class="section reveal">
+    <h2>Mis herramientas</h2>
+    <ul class="herramientas-list">
+      <li>Figma</li>
+      <li>Illustrator</li>
+      <li>Photoshop</li>
+      <li>After Effects</li>
+      <li>Blender</li>
+      <li>CapCut</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <section id="proyectos" class="section reveal">
+    <h2>Proyectos selectos</h2>
+    <div class="proyectos-grid">
+      <article class="proyecto-card proyecto-card--1">
+        <h3>Proyecto 01</h3>
+        <p><!-- pendiente: nombre y descripción real --></p>
+      </article>
+      <article class="proyecto-card proyecto-card--2">
+        <h3>Proyecto 02</h3>
+        <p><!-- pendiente: nombre y descripción real --></p>
+      </article>
+      <article class="proyecto-card proyecto-card--3">
+        <h3>Proyecto 03</h3>
+        <p><!-- pendiente: nombre y descripción real --></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contacto" class="section reveal cta-final">
+    <h2>Crea tu propio universo</h2>
+    <div class="contacto-links">
+      <a href="mailto:sofiazabala006@gmail.com" class="btn-contacto">Escríbeme</a>
+      <a href="#" class="btn-contacto btn-contacto--secundario"><!-- pendiente: usuario de GitHub -->GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Sofia Zabala</p>
+  <p>Bogotá, Colombia</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
