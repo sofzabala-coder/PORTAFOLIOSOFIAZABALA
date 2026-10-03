@@ -6,15 +6,31 @@
 <title>Sofia Zabala — Creative Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500&family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-preload', 'is-loading');
+  }
+</script>
 </head>
 <body>
 
-<canvas id="stars"></canvas>
+<div class="preloader" aria-hidden="true">
+  <div class="preloader-circle"></div>
+  <span class="preloader-count">0%</span>
+</div>
 
 <header class="site-header">
-  <a href="#hero" class="logo">Sofia Zabala</a>
+  <a href="#hero" class="logo" aria-label="Sofia Zabala, ir al inicio"><img src="images/logo-sz.jpeg" alt="" width="64" height="64"></a>
+  <nav class="site-nav">
+    <a href="#quien-soy" class="nav-link" data-text="Quién soy">Quién soy</a>
+    <a href="#herramientas" class="nav-link" data-text="Herramientas">Herramientas</a>
+    <a href="#que-hago" class="nav-link" data-text="Qué hago">Qué hago</a>
+    <a href="#universo" class="nav-link" data-text="Mi universo">Mi universo</a>
+    <a href="#proyectos" class="nav-link" data-text="Proyectos">Proyectos</a>
+  </nav>
+  <a href="#contacto" class="nav-cta">Contacto</a>
   <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-overlay">Menú</button>
 </header>
 
@@ -22,119 +38,187 @@
   <button id="menu-close" class="menu-toggle">Cerrar</button>
   <ul class="nav-links">
     <li><a href="#quien-soy">Quién soy</a></li>
-    <li><a href="#universo">Mi universo</a></li>
-    <li><a href="#que-hago">Qué hago</a></li>
     <li><a href="#herramientas">Herramientas</a></li>
+    <li><a href="#que-hago">Qué hago</a></li>
+    <li><a href="#universo">Mi universo</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
 <main>
+  <canvas id="stars"></canvas>
 
   <section id="hero" class="section hero">
-    <div class="hero-content">
-      <p class="hero-decor" data-split>universo</p>
-      <h1 class="signature hero-title" data-split>Sofia Zabala</h1>
-      <p class="tagline">Creative Mind · Digital Soul · Limitless Vision</p>
-      <p class="subtagline">Branding · Digital · Art</p>
+    <div class="hero-top">
+      <h1 class="hero-headline">
+        <span class="hero-line" data-split>Create</span>
+        <span class="hero-line" data-split>The Unexpected</span>
+      </h1>
+      <div class="hero-sub-row">
+        <p class="hero-blurb">Visión sin límites — diseño, branding y arte digital con identidad propia.</p>
+        <a href="#proyectos" class="hero-cta">Explorar</a>
+      </div>
     </div>
-    <div class="hero-planet" aria-hidden="true"></div>
+
+    <div class="hero-planet-wrap" aria-hidden="true">
+      <div class="hero-planet"></div>
+    </div>
+
+    <div class="hero-bottom">
+      <p class="hero-accent" data-split>Sofia</p>
+      <p class="hero-bigword" data-split>Zabala</p>
+    </div>
   </section>
 
-  <section id="quien-soy" class="section reveal">
-    <h2>¿Quién es Sofi?</h2>
+  <section id="vision" class="section vision-section">
+    <img src="images/vision-astronaut.png" alt="" aria-hidden="true" class="vision-bg">
+    <div class="vision-content">
+      <p class="vision-label">{ Creamos tu propio universo }</p>
+      <p class="vision-text" data-scroll-reveal>Diseño que convierte ideas en universos propios.</p>
+    </div>
+  </section>
+
+  <section id="quien-soy" class="section reveal quien-soy-section">
+    <h2>¿Quién soy yo?</h2>
     <div class="quien-soy-grid">
-      <div class="photo-frame" aria-hidden="true"><!-- pendiente: foto real --></div>
-      <p>
-        Diseñadora creativa basada en Bogotá, Colombia. Combino branding, diseño digital
-        y arte para construir identidades auténticas, memorables y vivas — pensadas para
-        marcas y clientes que quieren destacar con una visión propia.
-      </p>
+      <div class="photo-frame">
+        <img src="images/foto-sofia.png" alt="Retrato en blanco y negro de Sofia Zabala" loading="lazy">
+      </div>
+      <div class="quien-soy-text">
+        <p class="line line--lg">Creadora digital</p>
+        <p class="line line--indent">Creo identidades visuales,</p>
+        <p class="line">experiencias digitales y contenido creativo</p>
+        <p class="line line--indent">para marcas que buscan destacar.</p>
+        <p class="line">Combinando diseño, storytelling</p>
+        <p class="line line--indent">y experimentación visual,</p>
+        <p class="line line--dim line--indent">transformo ideas en identidades auténticas, memorables y vibrantes.</p>
+      </div>
     </div>
   </section>
 
-  <section id="universo" class="section reveal">
-    <h2>Mi universo</h2>
-    <p class="filosofia">
-      Creo marcas como se crean universos: con una identidad propia, coherente y viva en
-      cada punto de contacto.
-    </p>
-    <ul class="palabras-clave">
-      <li>Auténtico</li>
-      <li>Memorable</li>
-      <li>Vivo</li>
-    </ul>
-  </section>
-
-  <section id="que-hago" class="section reveal">
-    <h2>Qué hago</h2>
-    <div class="areas-grid">
-      <article class="area-card">
-        <h3>Branding</h3>
-        <p>Identidades visuales con personalidad propia.</p>
-      </article>
-      <article class="area-card">
-        <h3>Social</h3>
-        <p>Contenido y presencia de marca para redes.</p>
-      </article>
-      <article class="area-card">
-        <h3>Digital</h3>
-        <p>Diseño de interfaces y experiencias web.</p>
-      </article>
-      <article class="area-card">
-        <h3>Arte</h3>
-        <p>Piezas visuales exploratorias y personales.</p>
-      </article>
+  <section id="herramientas" class="section reveal tools-section">
+    <h2 class="tools-label">{ Mis herramientas }</h2>
+    <div class="tools-band">
+      <ul class="tools-track">
+        <li class="tool-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" width="40" height="40"><span>Figma</span></li>
+        <li class="tool-card"><img class="logo-light" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="" width="40" height="40"><span>Illustrator</span></li>
+        <li class="tool-card"><img class="logo-light" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="" width="40" height="40"><span>Photoshop</span></li>
+        <li class="tool-card"><img class="logo-light" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg" alt="" width="40" height="40"><span>After Effects</span></li>
+        <li class="tool-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="" width="40" height="40"><span>Blender</span></li>
+        <li class="tool-card">
+          <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="6" fill="none" stroke="#b98bf0" stroke-width="3"/><path d="M20 18l12 6-12 6z" fill="#b98bf0"/></svg>
+          <span>CapCut</span>
+        </li>
+        <li class="tool-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="40" height="40"><span>HTML</span></li>
+        <li class="tool-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="40" height="40"><span>CSS</span></li>
+        <li class="tool-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="40" height="40"><span>JavaScript</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="herramientas" class="section reveal">
-    <h2>Mis herramientas</h2>
-    <ul class="herramientas-list">
-      <li>Figma</li>
-      <li>Illustrator</li>
-      <li>Photoshop</li>
-      <li>After Effects</li>
-      <li>Blender</li>
-      <li>CapCut</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </section>
+  <section id="que-hago" class="cube-section" aria-label="Qué hago">
+    <div class="cube-scroll">
+      <div class="cube-sticky">
+        <span class="cube-mark cube-mark--left" aria-hidden="true">{ Qué</span>
+        <span class="cube-mark cube-mark--top" aria-hidden="true">{ Qué hago }</span>
 
-  <section id="proyectos" class="section reveal">
-    <h2>Proyectos selectos</h2>
-    <div class="proyectos-grid">
-      <article class="proyecto-card proyecto-card--1">
-        <h3>Proyecto 01</h3>
-        <p><!-- pendiente: nombre y descripción real --></p>
-      </article>
-      <article class="proyecto-card proyecto-card--2">
-        <h3>Proyecto 02</h3>
-        <p><!-- pendiente: nombre y descripción real --></p>
-      </article>
-      <article class="proyecto-card proyecto-card--3">
-        <h3>Proyecto 03</h3>
-        <p><!-- pendiente: nombre y descripción real --></p>
-      </article>
+        <div class="cube-wrap">
+          <div class="cube cube--title">
+            <div class="face"><span class="face-accent">auténtico</span><span class="face-word">Branding</span></div>
+            <div class="face"><span class="face-accent">memorable</span><span class="face-word">Social</span></div>
+            <div class="face"><span class="face-accent">vivo</span><span class="face-word">Digital</span></div>
+            <div class="face"><span class="face-accent">vibrante</span><span class="face-word">Arte</span></div>
+          </div>
+        </div>
+
+        <div class="cube-wrap">
+          <div class="cube cube--text">
+            <div class="face"><h3 class="face-title">Identidades visuales</h3><p class="face-text">Con personalidad propia.</p></div>
+            <div class="face"><h3 class="face-title">Contenido creativo</h3><p class="face-text">Presencia de marca para redes.</p></div>
+            <div class="face"><h3 class="face-title">Experiencias digitales</h3><p class="face-text">Diseño de interfaces y experiencias web.</p></div>
+            <div class="face"><h3 class="face-title">Piezas visuales</h3><p class="face-text">Exploratorias y personales.</p></div>
+          </div>
+        </div>
+
+        <span class="cube-mark cube-mark--right" aria-hidden="true">hago }</span>
+      </div>
     </div>
   </section>
 
-  <section id="contacto" class="section reveal cta-final">
-    <h2>Crea tu propio universo</h2>
-    <div class="contacto-links">
-      <a href="mailto:sofiazabala006@gmail.com" class="btn-contacto">Escríbeme</a>
-      <a href="#" class="btn-contacto btn-contacto--secundario"><!-- pendiente: usuario de GitHub -->GitHub</a>
+  <section id="universo" class="universe-section" aria-label="Mi universo">
+    <div class="universe-scroll">
+      <div class="universe-bg-wrap" aria-hidden="true">
+        <img class="universe-bg" src="images/universe-ship.png" alt="">
+      </div>
+
+      <ul class="stats">
+        <li class="stat stat--1"><span class="stat-num count" data-target="1">00</span><span class="stat-label">Design</span></li>
+        <li class="stat stat--2"><span class="stat-num count" data-target="2">00</span><span class="stat-label">3D</span></li>
+        <li class="stat stat--3"><span class="stat-num count" data-target="3">00</span><span class="stat-label">Motion</span></li>
+        <li class="stat stat--4"><span class="stat-num count" data-target="4">00</span><span class="stat-label">AI</span></li>
+        <li class="stat stat--5"><span class="stat-num count" data-target="5">00</span><span class="stat-label">Storytelling</span></li>
+      </ul>
     </div>
+  </section>
+
+  <section id="proyectos" class="projects-section" aria-roledescription="carousel" aria-label="Proyectos selectos">
+    <div class="wheel" tabindex="0">
+      <!-- pendiente: reemplazar cada .slide-art por la imagen real del proyecto (<img>) y poner el nombre real -->
+      <ul class="wheel-track">
+        <li class="slide slide--1"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 01</span></div></li>
+        <li class="slide slide--2"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 02</span></div></li>
+        <li class="slide slide--3"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 03</span></div></li>
+        <li class="slide slide--4"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 04</span></div></li>
+        <li class="slide slide--5"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 05</span></div></li>
+      </ul>
+    </div>
+
+    <div class="wheel-controls">
+      <button class="wheel-arrow wheel-prev" type="button" aria-label="Proyecto anterior">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="wheel-title">
+        <p class="wheel-label">{ Proyectos }</p>
+        <h2>Proyectos selectos</h2>
+      </div>
+      <button class="wheel-arrow wheel-next" type="button" aria-label="Siguiente proyecto">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="ball-cluster ball-cluster--left" data-pattern="left" aria-hidden="true"></div>
+
+    <div class="cta-center">
+      <h2 id="cta-title" class="cta-title"><span>Crea</span><span>sin</span><span>límites</span></h2>
+      <a href="#contacto" class="cta-btn">Explorar</a>
+    </div>
+
+    <div class="ball-cluster ball-cluster--right" data-pattern="right" aria-hidden="true"></div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <p>&copy; 2026 Sofia Zabala</p>
-  <p>Bogotá, Colombia</p>
+<div id="contacto" class="footer-space" aria-hidden="true"></div>
+
+<footer class="reveal-footer">
+  <div class="reveal-footer-body">
+    <h2 class="reveal-footer-label">{ Contáctame }</h2>
+    <div class="reveal-footer-links">
+      <!-- pendiente: poner el enlace real de cada red en el href -->
+      <a href="#" class="social-link" data-text="Telegram">Telegram</a>
+      <a href="#" class="social-link" data-text="LinkedIn">LinkedIn</a>
+      <a href="#" class="social-link" data-text="Instagram">Instagram</a>
+    </div>
+  </div>
+
+  <div class="reveal-footer-bar">
+    <p>&copy; 2026 Sofia Zabala</p>
+    <a href="mailto:sofiazabala006@gmail.com">sofiazabala006@gmail.com</a>
+    <a href="#hero">Volver arriba &uarr;</a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
