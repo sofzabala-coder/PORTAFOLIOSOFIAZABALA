@@ -26,7 +26,7 @@
   <nav class="site-nav">
     <a href="#quien-soy" class="nav-link" data-text="Quién soy">Quién soy</a>
     <a href="#herramientas" class="nav-link" data-text="Herramientas">Herramientas</a>
-    <a href="#que-hago" class="nav-link" data-text="Qué hago">Qué hago</a>
+    <a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a>
     <a href="#universo" class="nav-link" data-text="Mi universo">Mi universo</a>
     <a href="#proyectos" class="nav-link" data-text="Proyectos">Proyectos</a>
   </nav>
@@ -39,9 +39,10 @@
   <ul class="nav-links">
     <li><a href="#quien-soy">Quién soy</a></li>
     <li><a href="#herramientas">Herramientas</a></li>
-    <li><a href="#que-hago">Qué hago</a></li>
+    <li><a href="#servicios">Servicios</a></li>
     <li><a href="#universo">Mi universo</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#experimentacion">Experimentación</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -62,7 +63,10 @@
     </div>
 
     <div class="hero-planet-wrap" aria-hidden="true">
-      <div class="hero-planet"></div>
+      <!-- script.js paints the planet here: cloudy surface, light, dust ring, moon and star flares -->
+      <div class="planet-float">
+        <canvas class="hero-planet-canvas"></canvas>
+      </div>
     </div>
 
     <div class="hero-bottom">
@@ -80,19 +84,16 @@
   </section>
 
   <section id="quien-soy" class="section reveal quien-soy-section">
-    <h2>¿Quién soy yo?</h2>
+    <!-- data-sparkle: script.js scatters twinkling stars around the title -->
+    <h2><span class="sparkle-title" data-sparkle>Creadora digital</span></h2>
     <div class="quien-soy-grid">
-      <div class="photo-frame">
-        <img src="images/foto-sofia.png" alt="Retrato en blanco y negro de Sofia Zabala" loading="lazy">
+      <!-- data-constellation: script.js redraws the photo as a field of purple stars on a canvas -->
+      <div class="photo-frame" data-constellation>
+        <img src="images/foto-sofia.png" alt="Retrato de Sofia Zabala dibujado como una constelación de estrellas moradas" loading="lazy">
       </div>
       <div class="quien-soy-text">
-        <p class="line line--lg">Creadora digital</p>
-        <p class="line line--indent">Creo identidades visuales,</p>
-        <p class="line">experiencias digitales y contenido creativo</p>
-        <p class="line line--indent">para marcas que buscan destacar.</p>
-        <p class="line">Combinando diseño, storytelling</p>
-        <p class="line line--indent">y experimentación visual,</p>
-        <p class="line line--dim line--indent">transformo ideas en identidades auténticas, memorables y vibrantes.</p>
+        <!-- data-wave: script.js splits it into letters that rise around the cursor; <em> = highlighted words -->
+        <p class="statement" data-wave>Creo <em>identidades visuales</em>, <em>experiencias digitales</em> y <em>contenido creativo</em> para marcas que buscan destacar. Combinando diseño, <em>storytelling</em> y <em>experimentación visual</em>, transformo ideas en identidades auténticas, memorables y <em>vibrantes</em>.</p>
       </div>
     </div>
   </section>
@@ -117,31 +118,265 @@
     </div>
   </section>
 
-  <section id="que-hago" class="cube-section" aria-label="Qué hago">
-    <div class="cube-scroll">
-      <div class="cube-sticky">
-        <span class="cube-mark cube-mark--left" aria-hidden="true">{ Qué</span>
-        <span class="cube-mark cube-mark--top" aria-hidden="true">{ Qué hago }</span>
+  <!-- Servicios: an astronaut walks along a planet surface past holographic panels.
+       Without JS (or with reduced motion) the panels show as a plain grid. -->
+  <section id="servicios" class="walk-section" aria-labelledby="servicios-title">
+    <div class="walk-scroll">
+      <div class="walk-sticky">
+        <div class="walk-head">
+          <h2 id="servicios-title"><span class="sparkle-title" data-sparkle>Servicios</span></h2>        </div>
 
-        <div class="cube-wrap">
-          <div class="cube cube--title">
-            <div class="face"><span class="face-accent">auténtico</span><span class="face-word">Branding</span></div>
-            <div class="face"><span class="face-accent">memorable</span><span class="face-word">Social</span></div>
-            <div class="face"><span class="face-accent">vivo</span><span class="face-word">Digital</span></div>
-            <div class="face"><span class="face-accent">vibrante</span><span class="face-word">Arte</span></div>
+        <div class="walk-scene">
+          <div class="walk-sky" aria-hidden="true"></div>
+          <div class="walk-hills" aria-hidden="true"></div>
+
+          <div class="walk-track">
+            <article class="holo">
+              <span class="holo-no">01 / 07</span>
+              <h3>Branding e identidad visual</h3>
+              <p>Sistemas de marca coherentes: logotipo, paleta, tipografía y aplicaciones.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">02 / 07</span>
+              <h3>Producción audiovisual</h3>
+              <p>Piezas en video y motion graphics que dan movimiento y voz a la marca.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">03 / 07</span>
+              <h3>Experiencias digitales</h3>
+              <p>Sitios web e interfaces interactivas pensadas para el usuario.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">04 / 07</span>
+              <h3>Ilustración digital</h3>
+              <p>Arte e ilustraciones a medida con un lenguaje visual propio.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">05 / 07</span>
+              <h3>Campañas publicitarias</h3>
+              <p>Conceptos creativos y piezas para campañas en medios digitales.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">06 / 07</span>
+              <h3>Creatividad potenciada con IA</h3>
+              <p>Procesos de diseño impulsados por inteligencia artificial para crear con más alcance.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+            <article class="holo">
+              <span class="holo-no">07 / 07</span>
+              <h3>Storytelling de marca</h3>
+              <p>Narrativas memorables que conectan emocionalmente con la audiencia.</p>
+              <span class="holo-stamp" aria-hidden="true">En órbita</span>
+            </article>
+
+          </div>
+
+          <div class="walk-ground" aria-hidden="true"></div>
+
+          <!-- Astronaut (side view, facing right), redrawn from Sofia's illustration:
+               brown hair tied in a ponytail, green eyes, white suit with purple details, outlined cartoon style.
+               script.js rotates the parts marked data-joint around their data-pivot. -->
+          <svg class="astronaut" viewBox="0 0 140 240" aria-hidden="true">
+            <defs>
+              <linearGradient id="astro-suit" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#e4dcf3"/>
+              </linearGradient>
+              <linearGradient id="astro-hair" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6b4230"/>
+                <stop offset="0.5" stop-color="#432719"/>
+                <stop offset="1" stop-color="#26150d"/>
+              </linearGradient>
+              <radialGradient id="astro-iris" cx="0.4" cy="0.4" r="0.7">
+                <stop offset="0" stop-color="#a8f0c6"/>
+                <stop offset="0.5" stop-color="#2fae6e"/>
+                <stop offset="1" stop-color="#0f4a30"/>
+              </radialGradient>
+              <radialGradient id="hair-sheen">
+                <stop offset="0" stop-color="#c08a62" stop-opacity="0.55"/>
+                <stop offset="0.6" stop-color="#8a5a3c" stop-opacity="0.2"/>
+                <stop offset="1" stop-color="#8a5a3c" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="astro-skin" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7dccb"/>
+                <stop offset="1" stop-color="#e8b9a2"/>
+              </linearGradient>
+            </defs>
+
+            <!-- soft shadow on the ground (doesn't bob) -->
+            <ellipse cx="80" cy="236" rx="28" ry="3.5" fill="#000" opacity="0.35"/>
+
+            <g class="astro-body" data-joint="body" stroke-linejoin="round" stroke-linecap="round">
+              <!-- high ponytail, brown and wavy: tied at the back of the head, swings while she walks -->
+              <g data-joint="hair" data-pivot="51 30">
+                <path d="M54 24 C44 22 35 30 31 44 C27 58 29 74 25 90 C31 86 35 78 37 70
+                         C37 82 35 92 39 101 C43 91 45 79 45 66 C47 52 50 42 56 36 Z"
+                      fill="url(#astro-hair)" stroke="#1c1029" stroke-width="1.1"/>
+                <path d="M53 29 C46 33 41 43 39 55 C37 67 39 79 37 91 C42 82 43 70 44 60 C45 49 49 39 55 34 Z" fill="#5a3424"/>
+                <path d="M47 36 C42 46 40 58 40 70" stroke="#b07a52" stroke-width="1" fill="none" opacity="0.6"/>
+                <path d="M34 50 C31 62 32 74 29 84" stroke="#9a6644" stroke-width="0.9" fill="none" opacity="0.5"/>
+              </g>
+
+              <!-- back arm and back leg (slightly darker, behind the torso) -->
+              <g data-joint="armBack" data-pivot="77 100">
+                <rect x="70" y="95" width="14" height="48" rx="7" fill="#e7e0f3" stroke="#1c1029" stroke-width="1.2"/>
+                <rect x="70" y="131" width="14" height="5" fill="#7a4ad8"/>
+                <circle cx="77" cy="146" r="7" fill="#f1ecfa" stroke="#1c1029" stroke-width="1.2"/>
+              </g>
+              <g data-joint="thighBack" data-pivot="77 154">
+                <rect x="68" y="148" width="18" height="46" rx="8" fill="#e7e0f3" stroke="#1c1029" stroke-width="1.2"/>
+                <g data-joint="shinBack" data-pivot="77 192">
+                  <rect x="68" y="186" width="18" height="38" rx="8" fill="#e7e0f3" stroke="#1c1029" stroke-width="1.2"/>
+                  <ellipse cx="81" cy="191" rx="6" ry="7" fill="#6a3ad0" stroke="#1c1029" stroke-width="1"/>
+                  <path d="M64 220 h24 q10 0 10 8 v3 h-34 z" fill="#f1ecfa" stroke="#1c1029" stroke-width="1.2"/>
+                  <rect x="67" y="221" width="20" height="4" fill="#2a1a3d"/>
+                  <rect x="63" y="230" width="36" height="5" rx="2" fill="#5a2fb8" stroke="#1c1029" stroke-width="1"/>
+                </g>
+              </g>
+
+              <!-- life-support pack -->
+              <rect x="44" y="92" width="17" height="48" rx="6" fill="#f4f0fb" stroke="#1c1029" stroke-width="1.2"/>
+              <rect x="44" y="104" width="17" height="5" fill="#7a4ad8"/>
+              <circle cx="52.5" cy="128" r="2.2" fill="#d84df2"/>
+
+              <!-- neck -->
+              <rect x="80" y="64" width="11" height="22" rx="5" fill="#e3b4a3"/>
+
+              <!-- torso: white suit with dark outline -->
+              <path d="M60 90 Q77 82 96 90 L98 118 Q96 136 94 152 L62 152 Q58 136 58 118 Z"
+                    fill="url(#astro-suit)" stroke="#1c1029" stroke-width="1.3"/>
+              <!-- harness strap over the shoulder -->
+              <path d="M66 90 C68 106 70 124 72 144" stroke="#3a2a52" stroke-width="4" fill="none"/>
+              <!-- chest patch with a little planet -->
+              <rect x="80" y="101" width="14" height="10" rx="2" fill="#f4f0fb" stroke="#1c1029" stroke-width="1"/>
+              <circle cx="87" cy="106" r="2.4" fill="#7a4ad8"/>
+              <ellipse cx="87" cy="106" rx="4.2" ry="1.2" fill="none" stroke="#7a4ad8" stroke-width="0.8"/>
+              <!-- belt + purple buckle -->
+              <rect x="59" y="143" width="38" height="8" rx="3" fill="#2a1a3d"/>
+              <rect x="80" y="144" width="9" height="6" rx="1.5" fill="#7a4ad8" stroke="#f4f0fb" stroke-width="0.6"/>
+              <!-- collar ring -->
+              <rect x="70" y="80" width="27" height="10" rx="5" fill="#3a2a52" stroke="#1c1029" stroke-width="1"/>
+              <rect x="72" y="82" width="23" height="3" rx="1.5" fill="#7a4ad8"/>
+
+              <!-- front leg -->
+              <g data-joint="thighFront" data-pivot="77 154">
+                <rect x="68" y="148" width="18" height="46" rx="8" fill="url(#astro-suit)" stroke="#1c1029" stroke-width="1.2"/>
+                <rect x="80" y="156" width="6" height="16" rx="2" fill="#7a4ad8"/>
+                <g data-joint="shinFront" data-pivot="77 192">
+                  <rect x="68" y="186" width="18" height="38" rx="8" fill="#fbf8ff" stroke="#1c1029" stroke-width="1.2"/>
+                  <ellipse cx="81" cy="191" rx="6.5" ry="7.5" fill="#7a4ad8" stroke="#1c1029" stroke-width="1"/>
+                  <path d="M64 220 h24 q10 0 10 8 v3 h-34 z" fill="#ffffff" stroke="#1c1029" stroke-width="1.2"/>
+                  <rect x="67" y="221" width="20" height="4" fill="#2a1a3d"/>
+                  <rect x="63" y="230" width="36" height="5" rx="2" fill="#7a4ad8" stroke="#1c1029" stroke-width="1"/>
+                </g>
+              </g>
+
+              <!-- head in profile, animated-film style: slightly bigger head, big eye, button nose -->
+              <g transform="translate(84 70) scale(1.12) translate(-84 -70)">
+                <path d="M80 22 C92 22 100 28 101 37 C101.3 40.5 100.4 43 100.8 45.5
+                         C101.8 48 103.8 50.6 104.6 52.6 C104 54.2 102.6 54.6 101.8 54.8
+                         C102.8 56.6 102.8 58.4 101.6 59.2 C102.6 60.4 102.4 62 100.8 62.6
+                         C100.6 65.6 99 68.6 95 70.6 C91 72.6 86 72 82 70
+                         C70 66 58 56 58 44 C58 30 68 22 80 22 Z"
+                      fill="url(#astro-skin)" stroke="#1c1029" stroke-width="1"/>
+                <ellipse cx="78" cy="48" rx="3.5" ry="5" fill="#e3b4a3"/>
+                <circle cx="93" cy="55" r="5.5" fill="#f19aae" opacity="0.45"/>
+
+                <!-- big brown eye: white, iris, pupil, two catch-lights, lashes, brow -->
+                <path d="M90.4 46 C92 41.4 98 40.4 100.8 44.6 C98.6 48.6 93 49.2 90.4 46 Z" fill="#fff"/>
+                <circle cx="96.8" cy="45" r="2.8" fill="url(#astro-iris)"/>
+                <circle cx="97.2" cy="45" r="1.3" fill="#0b0710"/>
+                <circle cx="98" cy="44" r="0.85" fill="#fff"/>
+                <circle cx="96.2" cy="46.3" r="0.4" fill="#fff"/>
+                <path d="M90.2 45.6 C92 41.2 98.4 40.2 101 44.4" stroke="#0b0710" stroke-width="1.5" fill="none"/>
+                <path d="M99.6 42.4 q1.6 -1.6 3.4 -1.8 M100.6 43.4 q1.6 -1 3.4 -0.8 M101 44.5 q1.5 -0.3 3 0.3" stroke="#0b0710" stroke-width="0.9" fill="none"/>
+                <path d="M90.6 38.2 q5 -3.6 10.4 -1.2" stroke="#3a2218" stroke-width="1.3" fill="none"/>
+
+                <!-- lips -->
+                <path d="M100.6 56.6 q1.7 -0.4 1.9 1.4 q-1.1 0.4 -1.9 -1.4 z" fill="#e0708a"/>
+                <path d="M100 59.6 q1.7 0.3 1.6 1.8 q-1.3 0.3 -1.6 -1.8 z" fill="#cf5c78"/>
+
+                <!-- hair on the head: brown, fuller on top, side-swept fringe -->
+                <path d="M102 35 C102 20 90 12 78 13 C64 14 54 26 54 44 C54 55 58 63 63 69
+                         L74 64 C72 58 72 50 76 44 C80 38 86 36 90 37 C94 34.5 98.5 34 102 35 Z"
+                      fill="url(#astro-hair)" stroke="#1c1029" stroke-width="1"/>
+                <ellipse cx="80" cy="22" rx="17" ry="5.5" fill="url(#hair-sheen)" transform="rotate(-8 80 22)"/>
+                <path d="M102 34.6 C97 31.6 89 33 84.5 40.6 C90.5 38.4 96.5 37.4 102 36.8 Z" fill="#3a2218"/>
+                <path d="M96 30 C86 24 72 22 60 30 M90 34 C80 30 68 31 58 38" stroke="#8a5a3c" stroke-width="0.8" fill="none" opacity="0.5"/>
+                <!-- hair tie -->
+                <ellipse cx="55" cy="33" rx="2.6" ry="4.2" fill="#7a4ad8" stroke="#1c1029" stroke-width="0.6" transform="rotate(-25 55 33)"/>
+                <ellipse cx="55.4" cy="32.4" rx="1" ry="1.8" fill="#d84df2" transform="rotate(-25 55.4 32.4)"/>
+              </g>
+
+              <!-- front arm: purple band and cuff, white glove -->
+              <g data-joint="armFront" data-pivot="77 100">
+                <rect x="70" y="95" width="14" height="48" rx="7" fill="url(#astro-suit)" stroke="#1c1029" stroke-width="1.2"/>
+                <rect x="70" y="112" width="14" height="5" fill="#7a4ad8"/>
+                <rect x="70" y="131" width="14" height="5" fill="#7a4ad8"/>
+                <circle cx="77" cy="146" r="7" fill="#ffffff" stroke="#1c1029" stroke-width="1.2"/>
+              </g>
+            </g>
+          </svg>
+
+          <!-- Ending: she walks behind this ship, boards it from the back, and it takes off (script.js) -->
+          <div class="ship" aria-hidden="true">
+            <div class="ship-smoke"><span></span><span></span><span></span><span></span></div>
+            <div class="ship-inner">
+              <svg class="ship-svg" viewBox="0 0 200 230">
+                <defs>
+                  <linearGradient id="ship-body" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#cbbbe6"/>
+                    <stop offset="0.45" stop-color="#fbf8ff"/>
+                    <stop offset="1" stop-color="#b9a6dd"/>
+                  </linearGradient>
+                  <radialGradient id="ship-glass" cx="0.35" cy="0.35" r="0.75">
+                    <stop offset="0" stop-color="#f3e8ff"/>
+                    <stop offset="0.45" stop-color="#9b5de5"/>
+                    <stop offset="1" stop-color="#2a1150"/>
+                  </radialGradient>
+                  <linearGradient id="ship-flame-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ffffff"/>
+                    <stop offset="0.3" stop-color="#f3a6ff"/>
+                    <stop offset="0.7" stop-color="#d84df2"/>
+                    <stop offset="1" stop-color="#d84df2" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- flame (scaled by script.js) -->
+                <g class="ship-flame" opacity="0">
+                  <path d="M84 164 Q100 236 116 164 Z" fill="url(#ship-flame-grad)"/>
+                  <path d="M91 164 Q100 208 109 164 Z" fill="#fff" opacity="0.85"/>
+                </g>
+
+                <!-- landing legs -->
+                <path d="M68 138 L46 200 M132 138 L154 200" stroke="#8a56b5" stroke-width="5" stroke-linecap="round"/>
+                <rect x="36" y="198" width="22" height="5" rx="2.5" fill="#5a1fc0"/>
+                <rect x="142" y="198" width="22" height="5" rx="2.5" fill="#5a1fc0"/>
+
+                <!-- fins -->
+                <path d="M64 110 L32 172 L66 160 Z" fill="#d84df2"/>
+                <path d="M136 110 L168 172 L134 160 Z" fill="#a63bc4"/>
+
+                <!-- body, nose cone, stripe, nozzle -->
+                <path d="M100 8 C134 36 142 92 138 160 L62 160 C58 92 66 36 100 8 Z" fill="url(#ship-body)"/>
+                <path d="M100 8 C110 16 118 26 122 36 L78 36 C82 26 90 16 100 8 Z" fill="#d84df2"/>
+                <path d="M60.5 128 L139.5 128 L139.2 136 L60.8 136 Z" fill="#b98bf0"/>
+                <path d="M84 160 L116 160 L112 168 L88 168 Z" fill="#5a1fc0"/>
+
+                <!-- porthole -->
+                <circle cx="110" cy="68" r="16" fill="#8a56b5"/>
+                <circle cx="110" cy="68" r="12" fill="url(#ship-glass)"/>
+                <circle class="ship-window-light" cx="110" cy="68" r="12" fill="#f3a6ff" opacity="0"/>
+                <ellipse cx="105" cy="63" rx="4" ry="2.5" fill="#fff" opacity="0.6" transform="rotate(-35 105 63)"/>
+              </svg>
+            </div>
           </div>
         </div>
-
-        <div class="cube-wrap">
-          <div class="cube cube--text">
-            <div class="face"><h3 class="face-title">Identidades visuales</h3><p class="face-text">Con personalidad propia.</p></div>
-            <div class="face"><h3 class="face-title">Contenido creativo</h3><p class="face-text">Presencia de marca para redes.</p></div>
-            <div class="face"><h3 class="face-title">Experiencias digitales</h3><p class="face-text">Diseño de interfaces y experiencias web.</p></div>
-            <div class="face"><h3 class="face-title">Piezas visuales</h3><p class="face-text">Exploratorias y personales.</p></div>
-          </div>
-        </div>
-
-        <span class="cube-mark cube-mark--right" aria-hidden="true">hago }</span>
       </div>
     </div>
   </section>
@@ -162,29 +397,80 @@
     </div>
   </section>
 
-  <section id="proyectos" class="projects-section" aria-roledescription="carousel" aria-label="Proyectos selectos">
-    <div class="wheel" tabindex="0">
-      <!-- pendiente: reemplazar cada .slide-art por la imagen real del proyecto (<img>) y poner el nombre real -->
-      <ul class="wheel-track">
-        <li class="slide slide--1"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 01</span></div></li>
-        <li class="slide slide--2"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 02</span></div></li>
-        <li class="slide slide--3"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 03</span></div></li>
-        <li class="slide slide--4"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 04</span></div></li>
-        <li class="slide slide--5"><div class="slide-art"></div><div class="slide-info"><span class="slide-name">Proyecto 05</span></div></li>
+  <section id="proyectos" class="projects-section" aria-labelledby="proyectos-title">
+    <!-- hidden on screen, still read by screen readers as the section's name -->
+    <h2 id="proyectos-title" class="visually-hidden">Proyectos selectos</h2>
+
+    <div class="globe-stage" tabindex="0" aria-label="Proyectos sobre un globo que gira. Arrástralo para girarlo, usa las flechas para cambiar de proyecto y Enter para abrirlo.">
+      <p class="globe-ghost" aria-hidden="true">Mis<br>proyectos</p>
+      <div class="globe-halo" aria-hidden="true"></div>
+      <!-- pendiente: por cada proyecto, poner <img src="images/..." alt=""> dentro de .globe-card-art,
+           el nombre real en aria-label, "Categoría · Año" en data-meta y el link real en href -->
+      <ul class="globe">
+        <li><a class="globe-card proj--1" href="#valtherion" data-slug="valtherion" aria-label="Videojuego Valtherion" data-meta="Characters 3D · 2025"><span class="globe-card-art"><img src="images/valtherion.webp" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">01</span></a></li>
+        <li><a class="globe-card proj--2" href="#global-hack" data-slug="global-hack" aria-label="Línea Segura · Global Hack 2026" data-meta="Global Hack · 2026"><span class="globe-card-art" style="--art-bg: #1d4aa6"><img class="fit-whole" src="images/global-hack-2025.png" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">02</span></a></li>
+        <li><a class="globe-card proj--3" href="#bajo-la-sombra" data-slug="bajo-la-sombra" aria-label="Corto “Bajo la sombra de tu amor”" data-meta="Audiovisual · 2024"><span class="globe-card-art"><img src="images/bajo-la-sombra-de-tu-amor.png" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">03</span></a></li>
+        <li><a class="globe-card proj--4" href="#ancestrales" data-slug="ancestrales" aria-label="Videojuego Ancestrales" data-meta="Videojuego · 2026"><span class="globe-card-art"><img src="images/ancestrales.webp" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">04</span></a></li>
+        <li><a class="globe-card proj--5" href="#lz" data-slug="lz" aria-label="Diseño de marca firma L&amp;Z" data-meta="Branding · 2023"><span class="globe-card-art"><img src="images/lz-branding.png" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">05</span></a></li>
+        <li><a class="globe-card proj--6" href="#kantara" data-slug="kantara" aria-label="App turismo KANTARA" data-meta="App · 2024"><span class="globe-card-art"><img src="images/kantara-app.png" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">06</span></a></li>
+        <li><a class="globe-card proj--7" href="#dale" data-slug="dale" aria-label="UX Researcher app Dale!" data-meta="UX Researcher · 2026"><span class="globe-card-art"><img src="images/dale-ux.png" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">07</span></a></li>
+        <li><a class="globe-card proj--8" href="#campana-urbana" data-slug="campana-urbana" aria-label="Campaña publicitaria urbana" data-meta="Diseño · 2025"><span class="globe-card-art"><img src="images/campana-urbana.webp" alt="" loading="lazy" draggable="false"></span><span class="globe-card-num">08</span></a></li>
       </ul>
     </div>
 
-    <div class="wheel-controls">
-      <button class="wheel-arrow wheel-prev" type="button" aria-label="Proyecto anterior">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="wheel-title">
-        <p class="wheel-label">{ Proyectos }</p>
-        <h2>Proyectos selectos</h2>
+    <div class="globe-info">
+      <div class="globe-label" aria-live="polite">
+        <span class="globe-meta"></span>
+        <b class="globe-name"></b>
       </div>
-      <button class="wheel-arrow wheel-next" type="button" aria-label="Siguiente proyecto">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    </div>
+  </section>
+
+  <!-- Experimentación: personal music corner. Pick a vinyl sleeve and its record flies to the turntable. -->
+  <section id="experimentacion" class="exp-section" aria-labelledby="exp-title">
+    <div class="exp-head">
+      <h2 id="exp-title"><span class="sparkle-title" data-sparkle>Experimentación</span></h2>
+    </div>
+
+    <div class="exp-grid">
+      <div class="turntable">
+        <div class="tt-deck">
+          <div class="tt-platter" aria-hidden="true">
+            <span class="tt-hint">Elige un vinilo →</span>
+            <div class="tt-record">
+              <div class="tt-label"></div>
+            </div>
+            <div class="tt-sheen"></div>
+            <span class="tt-spindle"></span>
+          </div>
+          <div class="tt-arm" aria-hidden="true"><span class="tt-arm-bar"></span><span class="tt-arm-head"></span></div>
+          <span class="tt-pivot" aria-hidden="true"></span>
+          <div class="tt-controls" aria-hidden="true">
+            <span class="tt-led"></span><span class="tt-knob"></span><span class="tt-knob"></span>
+          </div>
+        </div>
+        <p class="tt-status" aria-live="polite"><span class="tt-dot" aria-hidden="true"></span><span class="tt-status-text">Esperando un vinilo</span></p>
+      </div>
+
+      <div class="sleeves">
+        <button class="sleeves-arrow sleeves-prev" type="button" aria-label="Portadas anteriores">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <!-- pendiente: por cada vinilo, poner <img src="images/..." alt=""> dentro de .sleeve-art,
+             el título en data-title y "Artista · Año" (o lo que quieras) en data-meta -->
+        <ul class="sleeves-track">
+          <li><button class="sleeve sleeve--1" type="button" data-title="Alma Estelar" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/alma-estelar.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Alma Estelar</span></span></button></li>
+          <li><button class="sleeve sleeve--2" type="button" data-title="Entre Sombras y Magia" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/entre-sombras-y-magia.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Entre Sombras y Magia</span></span></button></li>
+          <li><button class="sleeve sleeve--3" type="button" data-title="Yo siendo Spider" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/yo-siendo-spider.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Yo siendo Spider</span></span></button></li>
+          <li><button class="sleeve sleeve--4" type="button" data-title="Mi perspectiva" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/mi-perspectiva.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Mi perspectiva</span></span></button></li>
+          <li><button class="sleeve sleeve--5" type="button" data-title="Mil pruebas" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/mil-pruebas.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Mil pruebas</span></span></button></li>
+          <li><button class="sleeve sleeve--6" type="button" data-title="Sukuna" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/sukuna.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Sukuna</span></span></button></li>
+          <li><button class="sleeve sleeve--7" type="button" data-title="Ella y yo &lt;3" data-meta="Mis ilustraciones" aria-pressed="false"><span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-art"><img src="images/ella-y-yo.webp" alt="" loading="lazy" draggable="false"><span class="sleeve-name">Ella y yo &lt;3</span></span></button></li>
+        </ul>
+        <button class="sleeves-arrow sleeves-next" type="button" aria-label="Más portadas">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -194,10 +480,338 @@
     <div class="cta-center">
       <h2 id="cta-title" class="cta-title"><span>Crea</span><span>sin</span><span>límites</span></h2>
       <a href="#contacto" class="cta-btn">Explorar</a>
+      <!-- visible only when focused with the keyboard (or always, with reduced motion) -->
+      <button class="game-peek" type="button">✦ Hay un juego escondido</button>
+    </div>
+
+    <!-- Hidden game: holding the cursor over "Crea sin límites" turns it into galactic dust (script.js) -->
+    <canvas class="dust-canvas" aria-hidden="true"></canvas>
+
+    <div class="game-invite" role="dialog" aria-labelledby="game-invite-title" hidden>
+      <p class="game-invite-kicker">✦ Encontraste un secreto ✦</p>
+      <h3 id="game-invite-title" class="game-invite-title">Defensa Estelar</h3>
+      <p class="game-invite-text">Protege mi galaxia de los invasores.</p>
+      <div class="game-actions">
+        <button class="game-btn game-btn--primary" type="button" data-game="play">Jugar</button>
+        <button class="game-btn" type="button" data-game="later">Jugar después</button>
+      </div>
+    </div>
+
+    <div class="game-stage" hidden>
+      <canvas class="game-canvas" role="img" aria-label="Juego Defensa Estelar: mueve tu nave y destruye a los invasores"></canvas>
+      <div class="game-hud">
+        <span>Puntos <b class="game-score">0</b></span>
+        <span>Récord <b class="game-best">0</b></span>
+        <span>Oleada <b class="game-wave">1</b></span>
+        <span class="game-lives" aria-label="Vidas"></span>
+        <span class="game-hud-buttons">
+          <button class="game-icon-btn" type="button" data-game="mute" aria-label="Silenciar">🔊</button>
+          <button class="game-icon-btn" type="button" data-game="pause" aria-label="Pausar">❚❚</button>
+          <button class="game-icon-btn" type="button" data-game="exit" aria-label="Salir del juego">✕</button>
+        </span>
+      </div>
+      <div class="game-overlay" hidden>
+        <h3 class="game-overlay-title"></h3>
+        <p class="game-overlay-text"></p>
+        <div class="game-actions">
+          <button class="game-btn game-btn--primary game-overlay-primary" type="button"></button>
+          <button class="game-btn" type="button" data-game="exit">Salir</button>
+        </div>
+      </div>
+      <p class="game-help">Mueve el mouse o el dedo · Disparo automático · P para pausar</p>
     </div>
 
     <div class="ball-cluster ball-cluster--right" data-pattern="right" aria-hidden="true"></div>
   </section>
+
+  <!-- Case study window: opens when you click the front card of the globe (script.js).
+       Each project's content lives in its own <template id="case-SLUG"> below: edit the text there.
+       Text marked class="is-placeholder" is filler to replace with your real process. -->
+  <div class="case" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+    <div class="case-scroll">
+      <div class="case-bar">
+        <span class="case-count"></span>
+        <button class="case-close" type="button">Cerrar <span aria-hidden="true">✕</span></button>
+      </div>
+      <div class="case-body"></div>
+      <a class="case-next" href="#"><span class="case-next-label">Siguiente proyecto</span><strong class="case-next-title"></strong></a>
+    </div>
+  </div>
+
+  <template id="case-valtherion" data-category="Characters 3D">
+    <h2 class="case-title" id="case-title">Videojuego Valtherion</h2>
+    <figure class="case-hero case-hero--natural"><img src="images/valtherion.webp" alt="Portada del videojuego Valtherion"></figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2025</dd></div>
+      <div><dt>Tipo</dt><dd>Videojuego · Proyecto en equipo</dd></div>
+      <div><dt>Mi rol</dt><dd>Diseño y modelado 3D de la Reina y la Pantera</dd></div>
+      <div><dt>Herramientas</dt><dd>Blender</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead">Diseñamos el mundo y los personajes de un juego de acción de otro universo: un reino donde la realeza tiene el poder de dominar bestias. A mí me correspondió diseñar a <strong>la Reina</strong> y a <strong>la Pantera</strong>, el animal espiritual del príncipe. Esta es una pequeña muestra de su proceso en 3D.</p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <ol class="case-steps">
+        <li><span class="case-step-no">01</span><h4>Anatomía</h4><p>Estudio de manos y pies en distintas vistas como base para modelar extremidades creíbles.</p></li>
+        <li><span class="case-step-no">02</span><h4>Blocking</h4><p>Cabeza estilizada con orejas de elfa y cuerpo base en pose T, de frente y de perfil.</p></li>
+        <li><span class="case-step-no">03</span><h4>Escultura y retopología</h4><p>Esculpido del cuerpo de la Reina y de la Pantera, y retopología a low poly para que funcionen en el juego.</p></li>
+        <li><span class="case-step-no">04</span><h4>Vestuario</h4><p>Vestido low poly de la Reina con armadura en hombros, corsé y faldón, y una corona con gemas.</p></li>
+      </ol>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(La Reina)</h3>
+      <div class="case-proto--chars case-renders">
+        <img class="case-char" src="images/valtherion-reina-3d.png" alt="Render 3D del cuerpo de la Reina en Blender">
+        <img class="case-char" src="images/valtherion-vestido-3d.png" alt="Render 3D del vestido low poly y la corona de la Reina">
+      </div>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(La Pantera)</h3>
+      <div>
+        <figure class="case-render-wide"><img src="images/valtherion-pantera-3d.png" alt="Render 3D de la Pantera: escultura de referencia y retopología low poly"></figure>
+        <p class="case-caption">Escultura de referencia (izquierda) y retopología low poly (derecha).</p>
+      </div>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Galería)</h3>
+      <div class="case-gallery">
+        <img src="images/valtherion-cabeza.webp" alt="Blocking de la cabeza estilizada con orejas de elfa">
+        <img src="images/valtherion-cuerpo.webp" alt="Cuerpo base en pose T, de frente y de perfil">
+        <img src="images/valtherion-manos.webp" alt="Estudio de manos en tres vistas">
+        <img src="images/valtherion-pies.webp" alt="Estudio de pies en cuatro vistas">
+      </div>
+    </section>
+  </template>
+
+  <template id="case-global-hack" data-category="Global Hack 2026">
+    <h2 class="case-title" id="case-title">Línea Segura · Global Hack 2026</h2>
+    <figure class="case-hero case-hero--natural"><img src="images/global-burbuja.jpg" alt="Escena 3D: la hija de Paola viaja protegida dentro de una burbuja sobre una línea azul que representa su camino"></figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2026</dd></div>
+      <div><dt>Resultado</dt><dd>🥉 3.er lugar · Hackatón en equipo</dd></div>
+      <div><dt>Reto</dt><dd>Journey digital del Seguro Educativo</dd></div>
+      <div><dt>Organizan</dt><dd>Global Seguros × Design Factory Javeriana</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead">Con mi equipo, MSJ Digital Studio, participamos en el Global Hack 2026, un concurso de innovación de Global Seguros con el Design Factory Javeriana Bogotá. El reto: rediseñar el journey digital del Seguro Educativo para las familias en Colombia. Nuestra propuesta fue <strong>Línea Segura</strong>: <em>“Seguro que te ayuda a crecer”</em>. Entre los equipos de todas las universidades de la ciudad que participaron, <strong>quedamos en 3.er lugar</strong>.</p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <ol class="case-steps">
+        <li><span class="case-step-no">01</span><h4>El problema</h4><p>7 de cada 10 personas que cotizan un seguro educativo abandonan antes de pagar. No por falta de interés, sino por fricción: un formulario de 7 campos, 7 productos sin guía y respuestas que tardan más de 24 horas.</p></li>
+        <li><span class="case-step-no">02</span><h4>Paola, la usuaria</h4><p>Mamá de 33 años que navega desde el celular en momentos cortos, valida todo con otras madres y desconfía del lenguaje técnico. <em>“Yo sí quiero pagar, pero nadie me explica claro.”</em></p></li>
+        <li><span class="case-step-no">03</span><h4>El concepto</h4><p>Una línea que atraviesa los obstáculos (mitos, desconfianza, trámites) mientras la burbuja de Global Seguros protege a la hija en cada etapa de su crecimiento, hasta su meta educativa.</p></li>
+        <li><span class="case-step-no">04</span><h4>El nuevo journey</h4><p>Cinco etapas: un reel que conecta, un quiz de 3 preguntas con el precio visible, WhatsApp con un asesor real en menos de 2 horas, pago en 3 pasos con comprobante y mensajes en los hitos del hijo.</p></li>
+      </ol>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Dirección visual)</h3>
+      <div>
+        <p class="case-lead">Un mundo 3D minimalista en azules: la línea fluida es la vida, el escudo la protección y las monedas el crecimiento. Paola y su hija son personajes 3D que acompañan cada pieza.</p>
+        <figure class="case-hero case-hero--natural case-art"><img src="images/global-estilo.jpg" alt="Lámina de estilo de Línea Segura: concepto, paleta, elementos visuales, aplicaciones web y móvil, iconografía y redes"></figure>
+        <div class="case-proto case-proto--chars">
+          <img class="case-char" src="images/global-paola.png" alt="Paola abraza a su hija">
+          <img class="case-char" src="images/global-graduada.png" alt="La hija de Paola graduada: la meta educativa">
+        </div>
+        <a class="case-btn" href="https://www.figma.com/design/uwfcMpAWgM8FJb8OXeYQrJ/Global-Seguros_MSJ-Digital-Studio?node-id=0-1&amp;p=f&amp;t=A43DY4jwvchICcaa-0" target="_blank" rel="noopener">Ver el proyecto en Figma ↗</a>
+      </div>
+    </section>
+  </template>
+
+  <template id="case-bajo-la-sombra" data-category="Audiovisual">
+    <h2 class="case-title" id="case-title">Corto “Bajo la sombra de tu amor”</h2>
+    <figure class="case-hero case-video">
+      <video src="images/bajo-la-sombra.mp4" poster="images/bajo-la-sombra-de-tu-amor.png" controls playsinline preload="metadata"></video>
+    </figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2024</dd></div>
+      <div><dt>Tipo</dt><dd>Cortometraje · Proyecto en equipo</dd></div>
+      <div><dt>Género</dt><dd>Drama · Suspenso</dd></div>
+      <div><dt>Reto</dt><dd>Contar la historia en 13 segundos</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead">Creamos un cortometraje de drama y suspenso sobre un chico que, al inicio, parece estar hablando solo… pero en realidad no es lo que parece. Teníamos solo 13 segundos para contar la historia: todo un desafío que logramos completar, con la dirección y la producción hechas de forma profesional.</p>
+    </section>
+  </template>
+
+  <template id="case-ancestrales" data-category="Videojuego">
+    <h2 class="case-title" id="case-title">Videojuego Ancestrales</h2>
+    <figure class="case-hero case-hero--natural"><img src="images/ancestrales-pantallas.webp" alt="Pantallas del juego: inicio, modos de juego, selección de personajes y combate"></figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2026</dd></div>
+      <div><dt>Tipo</dt><dd>Videojuego · Proyecto en equipo</dd></div>
+      <div><dt>Género</dt><dd>Pelea 1 contra 1 · 2.5D</dd></div>
+      <div><dt>Plataforma</dt><dd>PC (Unity)</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead"><em>Ancestrales: El despertar de las leyendas</em> es un juego de pelea basado en las figuras de la colección Ancestrales de Quinteplast. Cuando Colombia olvida sus leyendas, la Boca del Olvido empieza a tragarse sus regiones, y las leyendas deben pelear entre ellas por la magia que queda: quien gana se vuelve oro y salva su tierra; quien pierde se vuelve piedra.</p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <ol class="case-steps">
+        <li><span class="case-step-no">01</span><h4>Concepto y mundo</h4><p>Cada región de Colombia existe gracias a la leyenda que la protege; si su historia se olvida, el lugar desaparece. De ahí nace la amenaza: la Boca del Olvido.</p></li>
+        <li><span class="case-step-no">02</span><h4>Historia</h4><p>Cuatro momentos: el despertar, el conflicto, la última pelea y el recuerdo. Ninguna leyenda es villana: todas pelean por salvar su tierra.</p></li>
+        <li><span class="case-step-no">03</span><h4>Las leyendas</h4><p>Los luchadores son las figuras de la colección: El Mohán (río), La Patasola (selva), El Hojarasquín del Monte (monte) y La Madremonte (montaña), cada uno con su estilo de pelea.</p></li>
+        <li><span class="case-step-no">04</span><h4>Jugabilidad</h4><p>Mejor de 3 rounds con especiales y un remate propio. El escenario pierde color mientras avanza la Boca, y el final invita a despertar a las leyendas con el QR de cada figura.</p></li>
+      </ol>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Dirección de arte)</h3>
+      <div>
+        <p class="case-lead">Fantasía oscura de inspiración folclórica colombiana: entornos 3D en 2.5D, piedra, vegetación y magia verde, con una estética cinematográfica. Eslogan: <em>“Recuérdalas… o desaparecerán.”</em></p>
+        <figure class="case-hero case-hero--natural case-art"><img src="images/ancestrales-estilo.webp" alt="Lámina de estilo: paleta, tipografía, interfaz, escenario de combate y las leyendas"></figure>
+      </div>
+    </section>
+  </template>
+
+  <template id="case-lz" data-category="Branding">
+    <h2 class="case-title" id="case-title">Diseño de marca firma L&amp;Z</h2>
+    <figure class="case-hero case-hero--natural"><img src="images/lz-letrero.jpg" alt="Letrero de vidrio con el logo de L&amp;Z: Especialistas en Contratación Estatal"></figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2023</dd></div>
+      <div><dt>Tipo</dt><dd>Identidad visual · Cliente real</dd></div>
+      <div><dt>Disciplinas</dt><dd>Logotipo · Paleta · Aplicaciones</dd></div>
+      <div><dt>Cliente</dt><dd>Firma de contratación estatal</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead">Creé desde cero la identidad visual de L&amp;Z, una firma especialista en contratación estatal, a gusto del cliente: en cada junta corregimos y rediseñamos hasta lograr lo que la firma buscaba transmitir, confianza, solidez y respaldo. Eslogan: <em>“L&amp;Z, tu mejor aliado en contratación.”</em></p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <ol class="case-steps">
+        <li><span class="case-step-no">01</span><h4>Inspiración</h4><p>La justicia como punto de partida: la balanza y la figura de la justicia guiaron el tono serio y confiable de la marca.</p></li>
+        <li><span class="case-step-no">02</span><h4>El símbolo</h4><p>Un monograma geométrico que une la L y la Z en un escudo, atravesado por un trazo de luz.</p></li>
+        <li><span class="case-step-no">03</span><h4>Juntas y ajustes</h4><p>En cada reunión el cliente revisaba las versiones y yo corregía forma, proporción y detalles hasta llegar a la versión final.</p></li>
+        <li><span class="case-step-no">04</span><h4>Sistema de marca</h4><p>Paleta en azul profundo, dorado y blanco, y sus aplicaciones: papelería, tarjetas, brochure, taza y señalética.</p></li>
+      </ol>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Evolución del símbolo)</h3>
+      <div>
+        <figure class="case-hero case-hero--natural"><img src="images/lz-iteraciones.jpg" alt="Seis versiones del símbolo de L&amp;Z ajustadas en las juntas con el cliente"></figure>
+        <p class="case-caption">Algunas de las versiones del símbolo que fuimos ajustando junta a junta.</p>
+        <div class="case-proto case-proto--logo">
+          <img src="images/lz-simbolo.png" alt="Símbolo final de L&amp;Z en dorado">
+          <img src="images/lz-paleta.jpg" alt="Paleta de color y versiones del logo sobre blanco, azul y dorado">
+        </div>
+      </div>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Aplicaciones)</h3>
+      <div class="case-gallery">
+        <img src="images/lz-papeleria.jpg" alt="Hoja membretada con sello">
+        <img src="images/lz-kit.jpg" alt="Kit de papelería corporativa en azul">
+        <img src="images/lz-tarjeta.jpg" alt="Tarjetas de presentación">
+        <img src="images/lz-taza.jpg" alt="Taza con el logo">
+        <img src="images/lz-brochure.jpg" alt="Brochure de portafolio de servicios">
+      </div>
+    </section>
+  </template>
+
+  <template id="case-kantara" data-category="App">
+    <h2 class="case-title" id="case-title">App turismo KANTARA</h2>
+    <figure class="case-hero case-hero--natural"><img src="images/kantara-app.png" alt="Portada de la app Turismo con KANTARA"></figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2024</dd></div>
+      <div><dt>Tipo</dt><dd>App móvil · Proyecto en equipo</dd></div>
+      <div><dt>Área</dt><dd>Turismo · Eje Cafetero</dd></div>
+      <div><dt>Herramientas</dt><dd>Figma</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <div>
+        <p class="case-lead">Diseñamos y creamos una app de turismo para las personas que viajan y quieren conocer el Eje Cafetero: tienen una guía personalizada que las acompaña en todo momento durante su viaje.</p>
+        <a class="case-btn" href="https://www.figma.com/design/hxhBW7jTwQl0lDN2zsHzv2/PROTOTIPO-APP-KANTARA?node-id=0-1&amp;t=sMCw7wz9Ss9CdBB9-1" target="_blank" rel="noopener">Ver el prototipo en Figma ↗</a>
+      </div>
+    </section>
+  </template>
+
+  <template id="case-dale" data-category="UX Researcher">
+    <h2 class="case-title" id="case-title">UX Researcher app Dale!</h2>
+    <!-- hero: three screens of the high-fidelity prototype, shown as phones without a background -->
+    <figure class="case-hero case-hero--phones">
+      <img src="images/dale-proto-inicio.png" alt="Inicio rediseñado: saldo arriba y los botones Envía y Paga grandes">
+      <img src="images/dale-proto-monto.png" alt="Paso 2 de 3: elegir cuánto enviar, con montos rápidos">
+      <img src="images/dale-proto-listo.png" alt="Comprobante: Enviado, Procesando y Completada">
+    </figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2026</dd></div>
+      <div><dt>Tipo</dt><dd>UX Research · Proyecto en equipo</dd></div>
+      <div><dt>Métodos</dt><dd>Encuesta · Diary study · Entrevistas · A/B testing</dd></div>
+      <div><dt>Herramientas</dt><dd>Figma</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <p class="case-lead">dale! es una billetera digital colombiana. Investigamos cómo la usan estudiantes y jóvenes trabajadores en su día a día, dónde se les complica y por qué prefieren (o no) otras billeteras. Con esos hallazgos encontramos los dolores de la app y construimos una propuesta de mejora.</p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <ol class="case-steps">
+        <li><span class="case-step-no">01</span><h4>Investigación</h4><p>Encuesta a 43 personas, diary study de 5 días con 3 participantes y 8 entrevistas. Cruzamos los tres métodos para entender cuándo y para qué abren la app.</p></li>
+        <li><span class="case-step-no">02</span><h4>Dolores</h4><p>dale! se usa por necesidad, no por hábito. Cuesta encontrar las funciones (facilidad 2,2/5), los banners distraen y da miedo equivocarse de persona o de monto al enviar.</p></li>
+        <li><span class="case-step-no">03</span><h4>Validación</h4><p>Con heatmaps, un funnel AARRR y 5 hipótesis priorizamos los problemas. En una prueba A/B, el flujo nuevo subió los datos correctos de 50 % a 100 % y la confianza de 3,5 a 4,5.</p></li>
+        <li><span class="case-step-no">04</span><h4>Propuesta</h4><p>Prototipo en Figma: Envía y Paga grandes arriba, llave con nombre verificado, confirmación con huella y estados claros. También hicimos una auditoría de accesibilidad (WCAG).</p></li>
+      </ol>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Prototipo)</h3>
+      <div class="case-proto">
+        <img class="case-phone" src="images/dale-proto-personaliza.png" alt="Pantalla Personaliza tu inicio: accesos rápidos y favoritos">
+        <div>
+          <p class="case-lead">Lo que más se usa, a un toque: cada persona elige sus accesos rápidos y favoritos, y Envía y Paga siempre van arriba.</p>
+          <a class="case-btn" href="https://www.figma.com/design/LXc6IyB8gnhuqtpBeOMPK0/Wirefrimes-Alta-fidelidad-DALE-?node-id=0-1&amp;t=mSwIh586STtnGNsp-1" target="_blank" rel="noopener">Ver el prototipo en Figma ↗</a>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="case-campana-urbana" data-category="Diseño">
+    <h2 class="case-title" id="case-title">Campaña publicitaria urbana</h2>
+    <figure class="case-hero case-hero--posters">
+      <img src="images/coca-poster-1.webp" alt="Póster Coca-Cola estilo graffiti con skyline y lettering Real Magic">
+      <img src="images/coca-poster-3.webp" alt="Póster Coca-Cola con escultura clásica, gafas y botella flotando en un remolino">
+      <img src="images/coca-poster-2.webp" alt="Póster Coca-Cola con busto clásico con gafas y trazos rojos">
+    </figure>
+    <dl class="case-meta">
+      <div><dt>Año</dt><dd>2025</dd></div>
+      <div><dt>Tipo</dt><dd>Campaña · Pósters</dd></div>
+      <div><dt>Resultado</dt><dd>⭐ Propuestas seleccionadas</dd></div>
+      <div><dt>Estilo</dt><dd>Streetwear · Graffiti · Arte urbano</dd></div>
+    </dl>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resumen)</h3>
+      <div>
+        <p class="case-lead">Una serie de propuestas gráficas para una campaña de <strong>Coca-Cola</strong> que explora una dirección distinta a su publicidad tradicional: reinterpretar su identidad comercial con una estética <em>streetwear</em>, tomando como referente el universo gráfico de Stüssy y la cultura urbana (graffiti, arte callejero y expresión juvenil).</p>
+        <p class="case-highlight">✦ Finalmente, <strong>mis propuestas fueron las seleccionadas.</strong></p>
+      </div>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(El reto)</h3>
+      <p class="case-lead">Que Coca-Cola conservara su identidad y sus elementos más representativos, pero ganara una personalidad más atrevida, artística y contemporánea. Experimenté con composiciones, lettering, ilustración, texturas, trazos manuales y recursos del lenguaje urbano, integrándolos en equilibrio sin perder el reconocimiento de la marca.</p>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Proceso)</h3>
+      <div>
+        <ol class="case-steps">
+          <li><span class="case-step-no">01</span><h4>Ideas iniciales</h4><p>Exploración de conceptos y primeros bocetos.</p></li>
+          <li><span class="case-step-no">02</span><h4>Composición</h4><p>Pruebas de distribución entre botella, logo y lettering.</p></li>
+          <li><span class="case-step-no">03</span><h4>Detalles y estilo</h4><p>Coronas, splashes, carita, ajedrezado y trazos del lenguaje street.</p></li>
+          <li><span class="case-step-no">04</span><h4>Pósters finales</h4><p>Cada diseño con intención propia: la esencia de la marca en clave experimental.</p></li>
+        </ol>
+        <figure class="case-hero case-hero--natural case-art"><img src="images/coca-bocetos.webp" alt="Hoja de proceso creativo: ideas iniciales, exploración de composición, detalles y resultado final"></figure>
+      </div>
+    </section>
+    <section class="case-section">
+      <h3 class="case-kicker">(Resultado)</h3>
+      <p class="case-lead">Una exploración gráfica que demuestra cómo una marca tradicional puede reinventar su comunicación visual y conectar con nuevas audiencias a través del diseño.</p>
+    </section>
+  </template>
 
 </main>
 
